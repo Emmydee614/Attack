@@ -1,0 +1,31 @@
+import logging
+import time
+
+# Configure logging
+logging.basicConfig(filename='bruteforcer.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+# Start timer
+start_time = time.time()
+
+try:
+    # Your brute-forcer code here
+    # ...
+    logging.info('Brute-forcer started')
+    
+    # Example successful attempt
+    logging.info('Successful attempt: username="admin" password="password123"')
+    
+    # Example failed attempt
+    logging.warning('Failed attempt: username="admin" password="wrongpassword"')
+    
+except Exception as e:
+    logging.error(f'An error occurred: {e}')
+
+# Stop timer
+end_time = time.time()
+logging.info(f'Brute-forcer finished. Time taken: {end_time - start_time:.2f} seconds')
+
+2025-04-20 16:58:05,717 - INFO - Brute-forcer started
+2025-04-20 16:58:05,717 - INFO - Successful attempt: username="admin" password="password123"
+2025-04-20 16:58:05,717 - WARNING - Failed attempt: username="admin" password="wrongpassword"
+2025-04-20 16:58:05,717 - INFO - Brute-forcer finished. Time taken: 0.00 seconds

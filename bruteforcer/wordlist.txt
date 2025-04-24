@@ -1,0 +1,16 @@
+def load_wordlist(filename):
+    try:
+        with open(filename, 'r', encoding='utf-8', errors='ignore') as file:
+            wordlist = file.read().splitlines()
+        return wordlist
+    except FileNotFoundError:
+        print(f"File '{filename}' not found.")
+        return []
+
+# Load the wordlist
+wordlist = load_wordlist('rockyou.txt')
+
+# Example usage
+for password in wordlist:
+    # Use the password for your brute-forcing logic
+    print(password)
